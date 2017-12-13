@@ -13,9 +13,8 @@
 ### Configurations
 
 ### mern-starter boilerplate
-This project utilize MERN (MongoDB, Express, React, Node) boilerplate from Hashnode:
-![title](https://travis-ci.org/Hashnode/mern-starter.svg?branch=v2.0.0)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+This project utilize MERN (MongoDB, Express, React, Node) boilerplate from [Hashnode](https://github.com/Hashnode/mern-starter)
+
 [![Discuss on Hashnode](
 https://hashnode.github.io/badges/mern.svg)](https://hashnode.com/n/mern)
 
