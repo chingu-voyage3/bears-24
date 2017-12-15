@@ -1,15 +1,17 @@
-// const mongoose = require('mongoose');
 import mongoose from 'mongoose';
 
 // Schema setup
 const eventSchema = new mongoose.Schema({
-  title: String,
+  title: {
+    type: String,
+    required: true,
+  },
   date: String,
   description: String,
   rsvp_list: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'user',
+      ref: 'User',
     },
   ],
   capacity: Number,
@@ -18,5 +20,4 @@ const eventSchema = new mongoose.Schema({
 
 
 export default mongoose.model('Event', eventSchema);
-// module.exports = mongoose.model('Event', eventSchema);
 
