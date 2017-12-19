@@ -12,6 +12,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  // might need to change later - not sure
+  loginMethod: {
+    type: String,
+  },
   events: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -22,7 +26,7 @@ const UserSchema = new mongoose.Schema({
 
 // hashing taken from MongoDB site - https://www.mongodb.com/blog/post/password-authentication-with-mongoose-part-1
 UserSchema.pre('save', function(next) {
-  var user = this;
+  const user = this;
 
   // only hash the password if it has been modified (or is new)
   if (!user.isModified('password')) return next();
@@ -42,8 +46,8 @@ UserSchema.pre('save', function(next) {
   });
 });
 
-UserSchema.methods.comparePassword = function(candidatePassword, cb) {
-  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+UserSchema.methods.comparePassword = function (candidatePassword, cb) {
+  bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
     if (err) return cb(err);
     cb(null, isMatch);
   });
