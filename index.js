@@ -21,6 +21,8 @@ if (process.env.NODE_ENV === 'production') {
     ]
   });
   require('babel-polyfill');
+  // load environment variables from the top level .env file
+  require('dotenv').config();
 
   require('./server/server');
 }

@@ -34,6 +34,7 @@ import Helmet from 'react-helmet';
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
 import posts from './routes/post.routes';
+import users from './routes/user.routes';
 import dummyData from './dummyData';
 import serverConfig from './config';
 
@@ -66,7 +67,11 @@ app.use(Express.static(path.resolve(__dirname, '../dist/client')));
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+// use routes from server/routes/
 app.use('/api', posts);
+app.use('/auth', users);
+
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {
