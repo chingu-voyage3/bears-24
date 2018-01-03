@@ -55,8 +55,8 @@ export class App extends Component {
             intl={this.props.intl}
             toggleAddPost={this.toggleAddPostSection}
           />
+          <Calendar />
           <div className={styles.container}>
-            <Calendar />
             {this.props.children}
           </div>
           <Footer />

@@ -1,7 +1,10 @@
 import React from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
-import styles from './react-big-calendar.css';
+// import styles from './react-big-calendar.css';
+// import styles from '../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
+import styles from 'react-big-calendar/lib/css/react-big-calendar.css';
+// import '!style-loader!css-loader!react-big-calendar/lib/css/react-big-calendar.css';
 
 BigCalendar.momentLocalizer(moment);
 
@@ -24,7 +27,8 @@ const Calendar = props => {
   return (
     <div>
       <BigCalendar
-        className={styles}
+        // className={styles}
+        style={styles}
         events={dummyEvents}
         startAccessor="startDate"
         endAccessor="endDate"
