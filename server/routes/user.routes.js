@@ -6,18 +6,18 @@ const router = new Router();
 
 // login
 router.route('/login').get(UserController.getLogin);
-router.route('/login').get(UserController.postLogin);
+router.route('/login').post(UserController.postLogin);
 
 // logout
 router.route('/logout').get(UserController.logout);
 
-// forget password
-router.route('/forgot').get(UserController.getForgot);
-router.route('/forgot').post(UserController.postForgot);
+// forget password future functions
+// router.route('/forgot').get(UserController.getForgot);
+// router.route('/forgot').post(UserController.postForgot);
 
-// token reset
-router.route('/reset/:token').get(UserController.getReset);
-router.route('/reset/:token').post(UserController.postReset);
+// token reset future functions
+// router.route('/reset/:token').get(UserController.getReset);
+// router.route('/reset/:token').post(UserController.postReset);
 
 // signup
 router.route('/signup').get(UserController.getSignup);
